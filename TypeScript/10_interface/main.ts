@@ -118,6 +118,54 @@ interface Covek {
   };
   
 
+  //Primer 4:
+  interface Osoba1{
+    ime:string
+  }
+  interface Zaposleni{
+    readonly id: number,
+    email: string
+  }
+  interface Programer extends Osoba1, Zaposleni{
+    nivo: string,
+    programskiJezik: string[]
+  }
+
+  const profilProgramera:Programer = {
+    ime:"Pavle",
+    id:11,
+    email: "matijasevic.pavle99@gmail.com",
+    nivo: "xy",
+    programskiJezik: ["Java", "Python", "C", "SQL", "C++"]
+  }
+
+
+/*
+Primer 5:
+Napisati fju koja se zove "pozdrav". Prihvata jedan string ili 
+niz stringova
+Fja stampa "dobar dan, <ime osobe>" za jednu osobu ili da pozdravi svaku osobu iz niza
+prema identicnom sablonu
+
+fja(param: tip)
+  if (typeof param === "neki teks tj konkretan tip")
+*/
+
+function pozdrav(osobe: string | string[]): void {
+    if (typeof osobe === "string") {
+      console.log(`Dobar dan, ${osobe}`);
+    } else {
+      osobe.forEach(osoba => {
+        console.log(`Dobar dan, ${osoba}`);
+      });
+    }
+  }
+  
+  pozdrav("Pavle");
+  pozdrav(["Marko", "Ana", "Petar"]);
+  
+
+
 
 
 
